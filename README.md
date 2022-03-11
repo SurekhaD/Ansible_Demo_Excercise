@@ -1,2 +1,3 @@
 # Ansible_Demo_Excercise
-1. Extercise 1 - Copy file
+1. Exercise 1 - Copy file
+2. Exercise 2 - Conditionals
