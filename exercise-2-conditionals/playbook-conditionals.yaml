@@ -1,0 +1,22 @@
+---
+- name: Install Softwares
+  hosts: all
+  become: yes
+  vars:
+    packages:
+       - name: nginx
+         required: True
+       - name: mysql
+         required: True
+       - name: wget
+         required: True
+
+  tasks:
+   - name: Install "{{ item.name }}" on Centos
+     yum:
+        name: "{{ item.name }}"
+        state: present
+
+     when:
+        item.required == True
+     loop: "{{ packages }}"
